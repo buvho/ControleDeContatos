@@ -2,7 +2,20 @@
 @{
     ViewData["Title"] = "Contatos";
 }
+@if (TempData["MensagemSucesso"] != null){
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-success btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
 
+@if (TempData["MensagemErro"] != null){
+<div class="alert alert-danger" role="alert">
+    <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+    @TempData["MensagemErro"]
+</div>
+}
+<br />
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <a class="btn btn-success" role="button" asp-controller="Contato" asp-action="Criar">adiconar novo contato</a>
 <div class="text-center">
