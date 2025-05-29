@@ -1,0 +1,18 @@
+﻿@model UsuarioModel
+
+<div class="container">
+    <a class="navbar-brand" asp-area="" asp-controller="Contato" asp-action="Index">ola, @Model.Nome!</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav flex-grow-1">
+            <a class="nav-item nav-link text-dark" asp-area="" asp-controller="Contato" asp-action="Index">Contatos</a>
+            @if (Model.Perfil == ControleDeContatos.PerfilEnum.Admin){
+                <a class="nav-item nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuarios</a>
+            }
+             <a class="nav-item nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Sair">Sair</a>
+        </ul>
+    </div>
+</div>

@@ -26,8 +26,7 @@ namespace ControleDeContatos.Repositories
 
         public ContatoModel Editar(ContatoModel contato)
         {
-            ContatoModel contatoDB = BuscarPorId(contato.Id);
-            if (contatoDB == null) throw new Exception("Contato não encontrado");
+            ContatoModel contatoDB = BuscarPorId(contato.Id) ?? throw new Exception("Contato não encontrado");
             contatoDB.Nome = contato.Nome;
             contatoDB.Email = contato.Email;
             contatoDB.Celular = contato.Celular;
